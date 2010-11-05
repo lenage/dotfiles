@@ -1,0 +1,144 @@
+# Use Xft?
+use_xft yes
+xftfont cure:size=6
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+#own_window  yes
+#own_window_transparent yes
+#own_window_type widget
+#own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 280 5
+
+#maximum_width 87
+maximum_width 96 
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 5
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color 4d4d4d
+#default_shade_color white
+#default_outline_color black
+#own_window_colour 262626
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 1170
+gap_y 50
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer yes
+
+#Email:
+#${pop3_unseen  **SERVER NAME**  **USERNAME**  **PASSWORD**} new messages
+TEXT
+
+${color 8F8F8F}${alignc 32}${font DotMatrix:size=16}${time %k:%M}
+
+${font WenQuanYi Micro Hei:size=10}${color 8F8F8F}${alignc}${voffset -10}${time %B} ${time %Y}
+#${color 8F8F8F}${alignc}${font WenQuanYi Micro Hei:size=10}${time %A}
+${color 7C96B0}${font WenQuanYi Micro Hei:size=8}${execpi 300 DJS=`date +%_d`; cal | sed '1d' | sed '/./!d' | sed 's/$/                     /' | fold -w 21 | sed -n '/^.\{21\}/p' | sed 's/^/${alignc} /' | sed /" $DJS "/s/" $DJS "/" "'${color 11a7e5}'"$DJS"'${color 8F8F8F}'" "/}${font}
+
+#${color 8F8F8F}${alignc 28}${font WenQuanYi Micro Hei:size=10}${time %c}
+#${color 8F8F8F}${alignc 06}${font WenQuanYi Micro Hei:size=10}${time %A}
+${color 7C96B0}${font DejaVu Sans Mono:size=6}${font}
+${color 7C96B0}UpTime:${color 8F8F8F}${alignr}$uptime
+${color 7C96B0}Load:${color 8F8F8F}${alignr}$loadavg
+#${color 98AE68}Email:${color 8F8F8F}${alignr}${execi 300 perl ~/.conky/scripts/gmail.pl n} new
+
+${color 7C96B0}Cpu1:${color 8F8F8F}${alignr}${cpu cpu1}% ${color EE6363}${execi 20 sensors k8temp-pci-00c3 |grep Core0 |awk "{print $3}"}
+${color 11a7e5}${cpugraph cpu1 20,95 0d8de8 11a7e5} 
+${color 7C96B0}Cpu2:${color 8F8F8F}${alignr}${cpu cpu2}% ${color EE6363}${execi 20 sensors k8temp-pci-00c3 |grep Core1 |awk "{print $3}"}
+${color 11a7e5}${cpugraph cpu2 20,95 0d8de8 11a7e5} 
+
+${color 7C96B0}Governor:
+#${color 8F8F8F}${execi 5 cat /sys/devices/system/cpu/cpu0/cpufreq/#scaling_governor} ${alignr}${execi 5 ~/.conky/scripts/cpu_mhz}GHz
+${color 7C96B0}Gpu:${color 8F8F8F}${alignr}${execi 20 nvidia-settings -q GPUCurrentClockFreqs -t} ${color EE6363}${execi 20 nvidia-settings -q GPUCoreTemp -t}°C
+
+${color 7C96B0}Ram:${color 8F8F8F}${alignr}$mem/$memmax
+${color 11a7e5}${membar 3,95}
+
+${color 7C96B0}Swap:${color 8F8F8F}${alignr}$swap/$swapmax
+${color 11a7e5}${swapbar 3,95}
+
+${color 98AE68}${font PizzaDude Bullets:size=10}N${font}${color EE6363}${alignr}${upspeed wlan0}
+${color 11a7e5}${upspeedgraph wlan0 20,95 0d8de8 57c1ff}
+${color 7C96B0}Total: ${color 8F8F8F}${totalup wlan0}
+
+${color 98AE68}${font PizzaDude Bullets:size=10}T${font}${color EE6363}${alignr}${downspeed wlan0}
+${color 11a7e5}${downspeedgraph wlan0 20,95 0d8de8 57c1ff}
+${color 7C96B0}Total: ${color 8F8F8F}${totaldown wlan0}
+
+${color 7C96B0}Disk IO:${color EE6363} ${alignr 4}$diskio
+${color 11a7e5}${diskiograph 20,95 0d8de8 57c1ff}
+${color 7C96B0}Root Free:${color 8F8F8F}${alignr}${fs_free /}
+${color 57c1ff}${fs_bar 3,95 /}
+${color 7C96B0}Home Free:${color 9F8F8F}${alignr}${fs_free /home/lenage/} 
+${color 57c1ff}${fs_bar 3,95 /home/lenage}
+#${color 7C96B0}Update:${color 98AE68}${alignr}${execi 600 aptitude search "~U" | wc -l}
+#${color 8F8F8F}${alignc 4}${font DejaVu Sans Mono:size=20}${execi 1 ~/.conky/scripts/mpd.awk}
+#${font}${color EE6363}${alignc}${voffset -15}${mpd_status}
+
+#${color 7C96B0}Artist:
+#${color 8F8F8F}${mpd_artist}
+#${color 7C96B0}Title:
+${color 57C1FF}${font WenQuanYi Micro Hei:size=8}${mpd_title} ${font WenQuanYi Micro Hei:size=6} ${color 57C1FF}${mpd_artist}
+#${color 7C96B0}Album:
+#${color 8F8F8F}${mpd_album}
+#${color 7C96B0}${alignr}Rand:
+#${color 8F8F8F}${alignr}${mpd_random}
+#${color 7C96B0}${alignr}Vol:
+#${color 8F8F8F}${alignr}${execi 1 amixer get Wave | grep "Front Left:" | awk '{print $5}' | grep -oE "[[:digit:]]{1,}"}%
+
+${color 11a7e5}${mpd_elapsed}${alignr}${mpd_length}
+${color 57C1FF}${mpd_bar 3,95}
+#${font WenQuanYi Micro Hei:size=8}${execi 1 python ~/.conky/scripts/conky-lyrics.py}
