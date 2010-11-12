@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/etc/nginx/sites-enabled'
+let g:netrw_dirhist_2='Desktop'
+let g:netrw_dirhist_3='/home/lenage/文档'
+let g:netrw_dirhist_4='/home/lenage/文档/BY/老师/含代码 (Manjunath 96 cited 1797) Texture features for browsing and retrieval of image data'
+let g:netrw_dirhist_5='/home/lenage/Document/BY/0601提供/gabor-v0.4.1'
