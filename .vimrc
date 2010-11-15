@@ -9,7 +9,7 @@ set nocompatible
 "显示行号
 set nu
 filetype plugin on
-filetype on
+filetype indent on
 set history=1000
 syntax on
 "自动缩进
@@ -20,6 +20,19 @@ set tabstop=4
 set shiftwidth=4
 set showmatch
 set hls
+"禁止自动换行
+"set nowrap
+"在输入命令时列出匹配项目
+set wildmenu
+"显示光标位置
+set ruler
+"分割窗口时保持等宽/高
+set equalalways
+
+"""""""""""""""""""""
+"NERDTree插件快捷键
+"""""""""""""""""""""
+nmap <silent><leader>nt :NERDTree<CR>
 "修改文件之后自动备份
 "if has("vms")
 "set nobackup
@@ -51,9 +64,3 @@ let g:vimwiki_html_header_numbering = 2
 "let g:vimwiki_folding = 1 
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki/html/','html_header': '~/vimwiki/template/header.tpl','html_footer': '~/vimwiki/template/footer.tpl',}] 
-
-"winmanager 按键绑定
-:map <c-w><c-t> :WMToggle<cr>
-:map <c-w><c-f> :FirstExplorerWindow<cr>
-:map <c-w><c-b> :BottomExplorerWindow<cr>
-
