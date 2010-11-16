@@ -1,4 +1,9 @@
-# Use Xft?
+#######################################
+#conky 配置文件 
+#Email:lendage@gmail.com
+#blog:http://lenage.com/wordpress/
+########################################
+#Use Xft?
 use_xft yes
 xftfont cure:size=6
 
