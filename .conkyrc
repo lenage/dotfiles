@@ -136,7 +136,7 @@ ${color 57c1ff}${fs_bar 3,95 /home/lenage}
 #${color 7C96B0}Artist:
 #${color 8F8F8F}${mpd_artist}
 #${color 7C96B0}Title:
-${color 57C1FF}${font WenQuanYi Micro Hei:size=8}${mpd_title} ${font WenQuanYi Micro Hei:size=6} ${color 57C1FF}${mpd_artist}
+#${color 57C1FF}${font WenQuanYi Micro Hei:size=8}${mpd_title} ${font WenQuanYi Micro Hei:size=6} ${color 57C1FF}${mpd_artist}
 #${color 7C96B0}Album:
 #${color 8F8F8F}${mpd_album}
 #${color 7C96B0}${alignr}Rand:
@@ -144,6 +144,6 @@ ${color 57C1FF}${font WenQuanYi Micro Hei:size=8}${mpd_title} ${font WenQuanYi M
 #${color 7C96B0}${alignr}Vol:
 #${color 8F8F8F}${alignr}${execi 1 amixer get Wave | grep "Front Left:" | awk '{print $5}' | grep -oE "[[:digit:]]{1,}"}%
 
-${color 11a7e5}${mpd_elapsed}${alignr}${mpd_length}
-${color 57C1FF}${mpd_bar 3,95}
+#${color 11a7e5}${mpd_elapsed}${alignr}${mpd_length}
+#${color 57C1FF}${mpd_bar 3,95}
 #${font WenQuanYi Micro Hei:size=8}${execi 1 python ~/.conky/scripts/conky-lyrics.py}
