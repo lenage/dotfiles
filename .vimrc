@@ -59,6 +59,8 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %A %H:%M ")<CR>
 "set wildmenu
 "显示编辑模式
 "set showmod
+"set showmatch
+"这儿添加的是一些多余的内容
 "vimwiki
 let g:vimwiki_html_header_numbering = 2 
 "let g:vimwiki_folding = 1 
