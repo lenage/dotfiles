@@ -3,7 +3,6 @@
 "lendage@gmail.com
 "By 夜深
 "*************
-
 "去掉VI的一致性问题
 set nocompatible
 "显示行号
@@ -55,10 +54,6 @@ endif
 "按F3插入当前时间
 nmap <F3> <C-R>=strftime("%Y-%m-%d %A %H:%M ")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d %A %H:%M ")<CR>
-"显示自动完成菜单
-"set wildmenu
-"显示编辑模式
-"set showmod
 "vimwiki
 let g:vimwiki_html_header_numbering = 2 
 "let g:vimwiki_folding = 1 
