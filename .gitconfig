@@ -1,0 +1,17 @@
+[user]
+	name = lenage
+	email = lendage@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/lenage/.gitignore
+[merge]
+	tool = vimdiff
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[color]
+	ui = true
