@@ -9,3 +9,5 @@
 04. **豆瓣 :** <http://douban.com/people/lendage>
 05. **那个早已经被人遗忘的twitter :** [@heyuan](http://twitter.com/heyuan)
 06. **点点 :**  <http://lenage.diandian.com>
+
+> 谢谢光临！
