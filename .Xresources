@@ -29,8 +29,8 @@ xterm*utf8Title: true
 xterm*renderFont: true
 xterm*preeditType: Root
 xterm*xftAntialias: true
-xterm*faceName: DejaVu Sans Mono:pixelsize=13.5
-xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
+xterm*faceName: Monaco:pixelsize=13
+!xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13
 
 !tango color scheme
 xterm*color0: #1e1e1e
@@ -62,7 +62,7 @@ URxvt*eightBitInput: false
 URxvt*altSendsEscape: true
 
 !font and locale
-Urxvt.font:xft:DejaVu Sans Mono:size=13
+Urxvt.font:xft:Monaco:size=13
 URxvt.perl-ext:      default,url-select
 URxvt.keysym.M-u:    perl:url-select:select_next
 URxvt.urlLauncher:   chromium

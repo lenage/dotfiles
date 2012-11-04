@@ -60,7 +60,7 @@ xrdb .Xresources
 #xmodmap -e "pointer = 3 2 1 4 5"
 tint2 &
 #xcompmgr -Ss -n -Cc -fF -I-10 -O-10 -D1 -t-3 -l-4 -r4 &
-(sleep 1 && pidgin &)
+#(sleep 1 && pidgin &)
 # this starts mpd as normal user
-mpd ~/.mpd/mpd.conf
+#mpd ~/.mpd/mpd.conf
 
