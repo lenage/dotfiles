@@ -1,0 +1,15 @@
+! use caps_lock as control key
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
+add Lock = Caps_Lock
+
+! swap Mod4 and Alt_L
+! Super_L 133
+! Alt_L 64
+clear Mod4
+clear Mod1
+keycode 64 = Super_L
+keycode 133 = Alt_L Meta_L
+add Mod4 = Super_L
+add Mod1 = Alt_L Meta_L
