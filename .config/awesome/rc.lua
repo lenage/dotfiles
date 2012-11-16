@@ -2,7 +2,6 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
-require("eminent")
 -- Theme handling library
 require("beautiful")
 -- Notification library
