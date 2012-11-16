@@ -30,7 +30,7 @@ xterm*renderFont: true
 xterm*preeditType: Root
 xterm*xftAntialias: true
 xterm*faceName: Monaco:pixelsize=13
-!xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13
+xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13
 
 !tango color scheme
 xterm*color0: #1e1e1e
