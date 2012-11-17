@@ -267,6 +267,22 @@ globalkeys = awful.util.table.join(
     -- Screenshot
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
 
+    -- XF86Media keys
+
+    -- MPD controls
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
+    awful.key({ }, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
+
+    awful.key({ }, "XF86AudioPlay",
+        function ()
+        --    if awful.util.spawn("mpc | grep paused") then
+                awful.util.spawn("mpc play")
+        --    else
+        --        awful.util.spawn("mpc pause")
+        --    end
+        end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
