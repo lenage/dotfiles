@@ -53,17 +53,17 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    -- awful.layout.suit.floating,
-    -- awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
+    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.floating,
+    awful.layout.suit.tile,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.magnifier
 }
 -- }}}
@@ -268,19 +268,19 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
 
     -- XF86Media keys
-
+    
     -- MPD controls
     awful.key({ }, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
     awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
     awful.key({ }, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
 
-    awful.key({ }, "XF86AudioPlay",
-        function ()
+    awful.key({ }, "XF86AudioPlay", 
+        function () 
         --    if awful.util.spawn("mpc | grep paused") then
-                awful.util.spawn("mpc play")
+                awful.util.spawn("mpc play") 
         --    else
-        --        awful.util.spawn("mpc pause")
-        --    end
+        --        awful.util.spawn("mpc pause") 
+        --    end   
         end),
 
     -- Prompt
@@ -379,6 +379,10 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "luakit" },
+      properties = { tag = tags[1][2] } },
+    { rule = { class = "amule" },
+      properties = { tag = tags[1][9] } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
