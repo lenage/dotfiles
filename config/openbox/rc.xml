@@ -370,6 +370,42 @@
         <command>voldown</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>MPC Prev</name>
+        </startupnotify>
+        <command>mpc prev</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>MPC Next</name>
+        </startupnotify>
+        <command>mpc next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>MPC Next</name>
+        </startupnotify>
+        <command>mpc pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>MPC play</name>
+        </startupnotify>
+        <command>mpc play</command>
+      </action>
+    </keybind>
     <keybind key="A-F6">
       <action name="ToggleMaximizeFull"> </action>
     </keybind>
