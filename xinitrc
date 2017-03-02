@@ -41,8 +41,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 urxvtd -q -f -o
+xset r rate 200 25
 
 xsetroot -cursor_name left_ptr &
-exec xmonad
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+#exec xmonad
 #exec awesome
-#exec openbox-session
+exec openbox-session
